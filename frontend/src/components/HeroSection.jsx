@@ -1,4 +1,4 @@
-import {marvelLogo} from '../assets'
+import {assets} from '../assets/assets'
 import { CalculatorIcon, ClockIcon } from 'lucide-react'
 
 export const HeroSection = () => {
@@ -6,7 +6,7 @@ export const HeroSection = () => {
     <div className='flex flex-col items-start justify-center gap-4 px-6 md:px-16 lg:px-36 bg-[url("/backgroundImage.png")] bg-cover bg-center h-screen'>
 
       <img 
-        src={marvelLogo} 
+        src={assets.marvelLogo} 
         className='max-h-11 lg:h-11 mt-20'
       />
 
