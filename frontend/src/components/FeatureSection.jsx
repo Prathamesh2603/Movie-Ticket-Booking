@@ -25,7 +25,7 @@ export const FeatureSection = () => {
       </div>
 
       {/* Feature Movies Card */}
-      <div>
+      <div className="flex flex-wrap max-sm:justify-center gap-8 mt-8">
         { dummyShowsData.slice(0, 4).map( (show) => (
           <MovieCard key={show.id} movie={show} /> 
         ) ) }
