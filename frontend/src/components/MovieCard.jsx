@@ -2,9 +2,9 @@ import { StarIcon } from "lucide-react";
 import { useNavigate } from "react-router-dom"
 import { timeFormat } from "../lib/timeFormat";
 
-export const MovieCard = () => {
+export const MovieCard = ({ movie }) => {
   const navigate = useNavigate();
-
+  console.log(movie)
   return (
     <div className="flex flex-col justify-between p-3 bg-gray-800 rounded-2xl hover:-translate-y-1 transition duration-300">
 

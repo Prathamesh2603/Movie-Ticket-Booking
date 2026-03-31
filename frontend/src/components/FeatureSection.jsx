@@ -26,7 +26,7 @@ export const FeatureSection = () => {
 
       {/* Feature Movies Card */}
       <div>
-        { dummyShowsData.slice(0, 4).map( show => (
+        { dummyShowsData.slice(0, 4).map( (show) => (
           <MovieCard key={show.id} movie={show} /> 
         ) ) }
       </div>
