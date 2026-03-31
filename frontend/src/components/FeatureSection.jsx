@@ -1,6 +1,8 @@
 import { ArrowRight } from "lucide-react";
 import { useNavigate } from "react-router-dom"
 import { BlurCircle } from "./BlurCircle";
+import { dummyShowsData } from "../assets/assets";
+import { MovieCard } from "./MovieCard";
 
 export const FeatureSection = () => {
   const navigate = useNavigate();
@@ -23,7 +25,11 @@ export const FeatureSection = () => {
       </div>
 
       {/* Feature Movies Card */}
-      <div></div>
+      <div>
+        { dummyShowsData.slice(0, 4).map( show => (
+          <MovieCard key={show.id} movie={show} /> 
+        ) ) }
+      </div>
 
       {/* Featured Section button */}
       <div className="flex justify-center mt-20">
