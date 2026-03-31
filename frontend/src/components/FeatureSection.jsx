@@ -21,6 +21,22 @@ export const FeatureSection = () => {
           <ArrowRight className="group-hover:translate-x-0.5 transition w-4.5 h-4.5" />
         </button>
       </div>
+
+      {/* Feature Movies Card */}
+      <div></div>
+
+      {/* Featured Section button */}
+      <div className="flex justify-center mt-20">
+        <button
+          className="px-10 py-3 text-sm bg-primary hover:bg-primary-dull transition rounded-md font-medium cursor-pointer"
+          onClick={() => {
+            navigate("/movies");
+            scrollTo(0,0);
+          }}
+        >
+          Show More
+        </button>
+      </div>
       
     </div>
   )
