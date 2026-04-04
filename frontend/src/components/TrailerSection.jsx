@@ -17,10 +17,12 @@ export const TrailerSection = () => {
       {/* Watch Movie Trailers */}
       <div className="relative mt-6">
         <BlurCircle top="-100px" right="-100px" />
-        <video controls autoPlay muted loop className="mx-auto max-w-full" width="960" height="540">
-          <source src={currentTrailer.videoUrl} type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+        <ReactPlayer 
+          className="mx-auto max-w-full"
+          url={currentTrailer.videoUrl} controls={false} 
+          width="960px" 
+          height="540px"
+        />
       </div>
 
       <div className="group grid grid-cols-4 gap-4 md:gap-8 mt-8 max-w-3xl mx-auto">
