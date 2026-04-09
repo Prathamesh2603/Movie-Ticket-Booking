@@ -4,6 +4,7 @@ import { Heart, PlayCircle, StarIcon } from 'lucide-react'
 import { dummyDateTimeData, dummyShowsData } from '../assets/assets';
 import { BlurCircle } from '../components/BlurCircle';
 import { timeFormat } from '../lib/timeFormat';
+import { DateSelect } from '../components/DateSelect';
 
 export const MovieDetails = () => {
   const {id} = useParams();
@@ -90,6 +91,9 @@ export const MovieDetails = () => {
           ))}
         </div>
       </div>
+
+      {/* Select date and time to watch movie */}
+      <DateSelect dateTime={show.dateTime} id={id} />
 
     </div>
   ) : <div>Loading...</div>
