@@ -1,9 +1,11 @@
-export const isoTimeFormat = (dateTime) => {
+const isoTimeFormat = (dateTime) => {
   const date = new Date(dateTime);
   const localTime = date.toLocaleTimeString( "en-US", {
     hour: "2-digit",
-    hour: "2-digit",
-    hour: true
+    minute: "2-digit",
+    hour12: true
   } );
   return localTime;
 }
+
+export default isoTimeFormat;
