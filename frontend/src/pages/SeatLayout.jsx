@@ -4,6 +4,7 @@ import { dummyDateTimeData, dummyShowsData } from "../assets/assets";
 import { Loading } from "../components/Loading";
 import { ClockIcon } from "lucide-react";
 import isoTimeFormat from "../lib/isoTimeFormat";
+import { BlurCircle } from "../components/BlurCircle";
 
 export const SeatLayout = () => {
   const {id, date} = useParams();
@@ -36,7 +37,7 @@ export const SeatLayout = () => {
         </p>
         <div className="mt-5 space-y-1"> 
           {show.dateTime[date].map((item) => (
-            <div className={`flex items-center gap-2 px-6 py-2 w-max rounded-r-md cursor-pointer transition ${selectedTime?.time === item.time ? "bg-primary text-white" : "hover:bg-primary/20"}`}>
+            <div key={item.time} onClick={() => setSelectedTime(item)} className={`flex items-center gap-2 px-6 py-2 w-max rounded-r-md cursor-pointer transition ${selectedTime?.time === item.time ? "bg-primary text-white" : "hover:bg-primary/20"}`}>
               <ClockIcon className="w-4 h-4" />
               <p className="text-sm">{ isoTimeFormat(item.time)}</p>
             </div>
@@ -45,7 +46,13 @@ export const SeatLayout = () => {
       </div>
 
       {/* Seats Layout */}
-      <div></div>
+      <div className="relative flex-1 flex flex-col items-center max-md:mt-16">
+        <BlurCircle top="-100px" left="-100px" />
+        <BlurCircle bottom="0px" right="0px" />
+        <h1 className="text-2xl font-semibold mb-4">
+          Select your seat
+        </h1>
+      </div>
 
     </div>
   ) : (
