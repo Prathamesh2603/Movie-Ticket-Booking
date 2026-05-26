@@ -44,7 +44,7 @@ export const MyBooking = () => {
           key={idx} 
           className="flex flex-col md:flex-row justify-between bg-primary/8 border border-primary/20 rounded-lg mt-4 p-2 max-w-3xl"
         >
-          <div className="flex flex-col md-flex-row">
+          <div className="flex flex-col md:flex-row">
             <img 
               src={item.show.movie.poster_path} 
               alt="" 
@@ -60,6 +60,30 @@ export const MyBooking = () => {
               </p>
               <p className="text-gray-400 text-sm mt-auto">
                 {dateFormat(item.show.showDateTime)}
+              </p>
+            </div>
+
+          </div>
+
+          <div className="flex flex-col md:items-end md:text-right justify-between p-4">
+
+            {/* Show Amount of the Ticket. And if the Price is Paid or not. if not then the Button is Showed.*/}
+            <div className="flex items-center gap-4">
+              <p className="text-2xl font-semibold mb-3">
+                {currency}{item.amount}
+              </p>
+              {!item.isPaid && <button className="bg-primary px-4 py-1.5 mb-3 text-sm rounded-full font-medium cursor-pointer">Pay Now</button>}
+            </div>
+
+            {/* Show's How Many Tickets is Booked by User */}
+            <div className="text-sm">
+              <p>
+                <span className="text-gray-400">Total Tickets:</span>
+                {item.bookedSeats.length}
+              </p>
+              <p>
+                <span className="text-gray-400">SeatNumber:</span>
+                {item.bookedSeats.join(", ")}
               </p>
             </div>
 
