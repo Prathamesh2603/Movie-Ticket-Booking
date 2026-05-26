@@ -3,6 +3,7 @@ import { dummyBookingData } from "../assets/assets";
 import { Loading } from "../components/Loading";
 import { BlurCircle } from "../components/BlurCircle";
 import { timeFormat } from "../lib/timeFormat";
+import { dateFormat } from "../lib/dateFormat";
 
 export const MyBooking = () => {
   const [bookings, setBookings] = useState([]); // Booking is empty for new user
@@ -58,7 +59,7 @@ export const MyBooking = () => {
                 {timeFormat(item.show.movie.runtime)}
               </p>
               <p className="text-gray-400 text-sm mt-auto">
-                {item.show.showDateTime}
+                {dateFormat(item.show.showDateTime)}
               </p>
             </div>
 
