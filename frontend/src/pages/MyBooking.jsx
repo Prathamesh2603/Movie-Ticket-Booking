@@ -20,10 +20,23 @@ export const MyBooking = () => {
   
   return !isLoading ? (
     <div className="relative px-6 md:px-16 lg:px-40 pt-30 md:pt-40 min-h-[80vh]">
-      <BlurCircle top="100px" left="100px"/>
+      
+      <BlurCircle 
+        top="100px" 
+        left="100px"
+      />
+
       <div>
-        <BlurCircle top="0" left="600px"/>
+        <BlurCircle
+          bottom="0px"
+          left="600px"
+        />
       </div>
+
+      <h1 className="text-lg font-semibold mb-4">
+        My Bookings
+      </h1>
+
     </div>
   ) : <Loading />
 }
