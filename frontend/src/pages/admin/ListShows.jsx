@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { dummyShowsData } from "../../assets/assets";
 import { Loading } from "../../components/Loading";
 import { Title } from "../../components/admin/Title";
+import { dateFormat } from "../../lib/dateFormat";
 
 export const ListShows = () => {
   const [shows, setShows] = useState([]);
@@ -47,6 +48,18 @@ export const ListShows = () => {
                   <th className="p-2 font-medium">Earnings</th>
                 </tr>
               </thead>
+              <tbody className="text-sm font-light">
+                {
+                  shows.map((show, idx) => (
+                    <tr key={idx} className="border-b border-primary/10 bg-primary/5 even:bg-primary/10">
+                      <td className="p-2 min-w-45 pl-5">{show.movie.title}</td>
+                      <td className="p-2">{dateFormat(show.showDateTime)}</td>
+                      <td className="p-2">{Object.keys(show.occupiedSeats).length}</td>
+                      <td className="p-2">{currency} {Object.keys(show.occupiedSeats).length * show.showPrice}</td>
+                    </tr>
+                  ))
+                }
+              </tbody>
             </table>
 
           </div>
